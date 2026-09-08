@@ -12,11 +12,11 @@ def fetch_repos(username):
 
 
 if __name__ == "__main__":
-    # Using GitHub's own public demo account here - "mtls1976-ux" returned an
-    # empty list because that repo is currently private, and this endpoint
-    # only lists PUBLIC repos for an unauthenticated request. Good bug to hit
-    # on Day 5. Switch this back to "mtls1976-ux" once the repo is public.
-    raw = fetch_repos("octocat")
+    # Note: this returned an empty list on Day 5 because the repo was still
+    # private at the time (this endpoint only lists PUBLIC repos for an
+    # unauthenticated request) - that's why day6/day7 first used "octocat"
+    # as a stand-in. Now that fde-roadmap is public, this works directly.
+    raw = fetch_repos("mtls1976-ux")
 
     # 1. Pull 3 specific fields out of nested JSON.
     # "owner" is itself a nested dict inside each repo dict - that's the nesting.
